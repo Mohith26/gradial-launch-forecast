@@ -12,6 +12,7 @@ const st = { applied: saved.applied || [], launch: saved.launch || S.LAUNCH, vie
 const persist = () => localStorage.setItem(LS, JSON.stringify({ applied: st.applied, launch: st.launch }));
 function toast(m) { const t = $('#toast'); t.textContent = m; t.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('show'), 1800); }
 const icons = () => window.lucide && window.lucide.createIcons();
+window.__lucideReady = icons;
 
 const hist = S.makeHistory();
 const basePlan = S.demoPlan(hist);
