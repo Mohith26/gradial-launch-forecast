@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q4 Launch: Fleet Analytics · Gradial</title>
+<meta name="description" content="Launch forecast for Gradial workflows: the probability a campaign goes live on time, what is driving the risk, and which approver changes fix it.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' font-size='17' text-anchor='middle' fill='white' font-family='Georgia' font-weight='700'%3Eg%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>window.__errs=[];addEventListener("error",e=>__errs.push(String(e.message||e)));addEventListener("unhandledrejection",e=>__errs.push(String(e.reason)));</script>
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="side" aria-label="Navigation">
+    <div class="org"><span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 19 6-9 4 5 3-4 5 8z"/></svg></span><b>Ballard</b><i class="ic" data-lucide="chevrons-up-down"></i><i class="ic" data-lucide="search"></i></div>
+    <nav class="nav">
+      <a href="#/forecast"><i data-lucide="house"></i>Home<span class="kbd"><span>⌘</span><span>J</span></span></a>
+      <a href="#/forecast"><i data-lucide="inbox"></i>Inbox<span class="badge-blue">99+</span></a>
+      <a href="#/forecast"><i data-lucide="layout-grid"></i>Workspaces</a>
+      <div class="sec">Pinned <i data-lucide="chevron-down"></i><i class="plus" data-lucide="plus"></i></div>
+      <a href="#/forecast"><i data-lucide="message-circle"></i>My Chats</a>
+      <a href="#/forecast"><span class="dot-p" aria-hidden="true"></span>Slack: Run this …</a>
+      <a href="#/forecast"><i data-lucide="folder"></i>B2C</a>
+      <a class="indent" href="#/forecast"><i data-lucide="users" style="color:#3080ff"></i>B2C Campaign</a>
+      <a href="#/forecast"><i data-lucide="folder"></i>B2B</a>
+      <a class="indent" href="#/forecast"><i data-lucide="building-2" style="color:#ac4bff"></i>B2B Campaig…</a>
+      <a class="indent active" href="#/forecast" aria-current="page"><span class="dot-p" aria-hidden="true"></span>Q4 Launch: Fle…</a>
+      <a class="indent" href="#/forecast"><span class="dot-p" aria-hidden="true"></span>Analytics: Pos…</a>
+      <a href="#/forecast"><i data-lucide="layout-dashboard" style="color:#fe6e00"></i>Prompt Wall</a>
+      <div class="sec">Insights <i data-lucide="chevron-down"></i></div>
+      <a href="#/forecast"><i data-lucide="globe"></i>GEO</a>
+      <div class="sec">Library <i data-lucide="chevron-down"></i></div>
+      <a href="#/forecast"><i data-lucide="workflow"></i>Workflow Templates</a>
+      <a href="#/forecast"><i data-lucide="file-text"></i>Prompt Templates</a>
+      <a href="#/forecast"><i data-lucide="square-pen"></i>Skills</a>
+    </nav>
+    <div class="foot"><i data-lucide="settings"></i><i data-lucide="circle-help"></i><i class="r" data-lucide="panel-left"></i></div>
+  </aside>
+  <div class="main">
+    <section class="panel" aria-label="Task">
+      <div class="crumbs"><span>B2B Campaigns</span><i data-lucide="chevron-right"></i><b>Q4 Launch: Fleet Analytics</b><span class="v">v1</span></div>
+      <div class="taskhome" id="taskhome"></div>
+      <div class="ask" aria-hidden="true"><i data-lucide="plus"></i>Ask Grady<span class="m">Grady <i data-lucide="chevron-down"></i></span><span class="go"><i data-lucide="arrow-up"></i></span></div>
+    </section>
+    <section class="panel" aria-label="Subtasks">
+      <div class="rtabs">
+        <span class="rtab on"><i data-lucide="rows-3"></i>Subtasks <span class="n">10</span></span>
+        <span class="rtab"><i data-lucide="layout-grid"></i>Artifacts</span>
+        <span class="sp"></span>
+        <i data-lucide="maximize-2" style="color:#525252"></i>
+        <span class="subs-btn"><i data-lucide="circle-plus"></i>Subscribers</span>
+        <i data-lucide="ellipsis-vertical" style="color:#525252"></i>
+      </div>
+      <div class="toolbar">
+        <label class="tsearch"><i data-lucide="search"></i><span style="position:absolute;width:1px;height:1px;overflow:hidden">Search tasks</span><input id="q" placeholder="Search tasks..."></label>
+        <button class="tbtn" id="filterbtn"><i data-lucide="list-filter"></i>Filter</button>
+        <span class="sp"></span>
+        <button class="tbtn" id="export" title="Export forecast (e)"><i data-lucide="download"></i>Export</button>
+        <div class="viewmenu" id="viewmenu">
+          <button class="tbtn" id="viewbtn" aria-haspopup="menu" aria-expanded="false"><i data-lucide="chart-no-axes-column"></i>View <span id="viewname" style="color:#737373;font-weight:400">Forecast</span><i data-lucide="chevron-down"></i></button>
+          <div class="menu" role="menu">
+            <button role="menuitemradio" data-view="table"><i data-lucide="list"></i>Table</button>
+            <button role="menuitemradio" data-view="forecast"><i data-lucide="chart-no-axes-column"></i>Forecast<span class="new">New</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="rbody" id="rbody"><div class="state"><div><div class="spin"></div>Simulating 2,000 launches…</div></div></div>
+      <div class="drawer" id="drawer" role="dialog" aria-label="Subtask forecast detail"></div>
+    </section>
+  </div>
+</div>
+<div class="foot-note">Unofficial concept demo by Mohith Gajjela. Not affiliated with Gradial. Synthetic data (seeded). <a href="https://github.com/Mohith26/gradial-launch-forecast" target="_blank" rel="noopener">Source</a> · <span class="kbdk">?</span> shortcuts</div>
+<div class="toast" id="toast" role="status"></div>
+<div class="help" id="help" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts"><div class="card"><b>Keyboard shortcuts</b><dl><dt><span class="kbdk">f</span> / <span class="kbdk">t</span></dt><dd>Forecast / Table view</dd><dt><span class="kbdk">j</span> <span class="kbdk">k</span></dt><dd>Next / previous subtask</dd><dt><span class="kbdk">a</span></dt><dd>Apply the top recommendation</dd><dt><span class="kbdk">u</span></dt><dd>Undo last change</dd><dt><span class="kbdk">e</span></dt><dd>Export forecast CSV</dd><dt><span class="kbdk">Esc</span></dt><dd>Close drawer</dd></dl></div></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
